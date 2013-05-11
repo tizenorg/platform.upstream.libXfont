@@ -61,6 +61,7 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files
+%license COPYING
 %defattr(-,root,root)
 %{_libdir}/libXfont.so.1*
 
