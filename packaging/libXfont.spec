@@ -9,6 +9,7 @@ Group:          Development/Libraries/C and C++
 #Git-Clone:	git://anongit.freedesktop.org/xorg/lib/libXfont
 #Git-Web:	http://cgit.freedesktop.org/xorg/lib/libXfont/
 Source:         %{name}-%{version}.tar.bz2
+Source1001: 	libXfont.manifest
 #git#BuildRequires:	autoconf >= 2.60, automake, libtool
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(fontenc)
@@ -48,6 +49,7 @@ in %{name}.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %reconfigure --disable-static
@@ -61,11 +63,13 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root)
 %{_libdir}/libXfont.so.1*
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_includedir}/X11/*
 %{_libdir}/libXfont.so
