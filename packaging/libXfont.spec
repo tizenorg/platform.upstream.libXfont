@@ -52,7 +52,8 @@ in %{name}.
 cp %{SOURCE1001} .
 
 %build
-%reconfigure --disable-static
+%reconfigure --disable-static \
+           --enable-fc --enable-builtins --enable-pcfformat --enable-bdfformat --without-bzip2
 make %{?_smp_mflags}
 
 %install
