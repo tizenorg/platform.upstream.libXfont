@@ -1,5 +1,5 @@
 Name:           libXfont
-Version:        1.4.5
+Version:        1.4.7
 Release:        0
 License:        MIT
 Summary:        X font handling library for server and utilities
@@ -52,7 +52,7 @@ in %{name}.
 cp %{SOURCE1001} .
 
 %build
-%reconfigure --disable-static \
+%autogen --disable-static \
            --enable-fc --enable-builtins --enable-pcfformat --enable-bdfformat --without-bzip2
 make %{?_smp_mflags}
 
