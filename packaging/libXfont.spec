@@ -21,6 +21,10 @@ BuildRequires:  pkgconfig(xtrans)
 BuildRequires:  pkgconfig(zlib)
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
+%if !%{with x}
+ExclusiveArch:
+%endif
+
 %description
 libXfont provides the core of the legacy X11 font system, handling
 the index files (fonts.dir, fonts.alias, fonts.scale), the various
