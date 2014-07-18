@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libXfont
 Version:        1.4.7
 Release:        0
