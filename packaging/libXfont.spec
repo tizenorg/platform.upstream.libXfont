@@ -1,7 +1,7 @@
 %bcond_with x
 
 Name:           libXfont
-Version:        1.4.7
+Version:        1.5.0
 Release:        0
 License:        MIT
 Summary:        X font handling library for server and utilities
